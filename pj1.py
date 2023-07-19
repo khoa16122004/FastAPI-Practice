@@ -13,7 +13,7 @@ BOOKS = [
 ]
 
 
-# API endpoint : respone in htpps::..../api-endponts
+# API endpoint definition: respone in htpps::..../api-endponts
 
 ## get request
 @app.get("/books/")
