@@ -76,7 +76,7 @@ Note: When using the **GET** method, the query parameter should follow the endpo
 ## SQL Alchemy
 This a modul in python helping us for connect and control with database easily through a injection code. This following code for create a simple setup for **sqlalchemy**
 
-  ```
+  ```python
   from sqlalchemy import create_engine
   from sqlalchemy.orm import sessionmaker
   from sqlalchemy.ext.declarative import declarative_base
