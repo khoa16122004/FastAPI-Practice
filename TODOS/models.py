@@ -9,7 +9,7 @@ class Users(Base):
     username = Column(String, unique=True)
     first_name = Column(String)
     last_name = Column(String)
-    hashed_password = Column(String)
+    hashed_password = Column(String) # the request will be rehashing password
     is_active = Column(Boolean, default=True)
     role = Column(String)
     

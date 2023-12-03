@@ -20,7 +20,7 @@ def get_db():
 db_dependency = Annotated[Session, Depends(get_db)]    
 
 
-# validation message request
+# validation Todo request
 class TodoRequest(BaseModel):
     title: str = Field(min_length=3)
     description: str = Field(min_length=3, max_length=100)
@@ -44,7 +44,7 @@ async def read_todo(db: db_dependency, todo_id: int = Path(gt=0)):
 
 @router.post("/todo", status_code=status.HTTP_201_CREATED)
 async def create_todo(db: db_dependency, todo_request: TodoRequest):
-    todo_model = Todo(**todo_request.model_dump()) # dump json format
+    todo_model = Todo(**todo_request.model_dump()) # create Todo instance database
     db.add(todo_model) # insert
     db.commit() # commit insert process
     
