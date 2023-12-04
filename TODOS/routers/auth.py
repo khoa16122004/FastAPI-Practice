@@ -83,7 +83,7 @@ async def create_user(db: db_dependency,
     db.add(create_user_model) # insert
     db.commit() # commit insert process
     
-@router.post("/token", response_model=Token)
+@router.post("/token")
 async def login_for_access_token(form_data: Annotated[OAuth2PasswordRequestForm, Depends()],
                                  db: db_dependency):
     
@@ -92,5 +92,4 @@ async def login_for_access_token(form_data: Annotated[OAuth2PasswordRequestForm,
         return "Failed Authentication"
     
     token = create_access_token(user.username, user.id, timedelta(minutes=20))
-    
     return {'access_token': token, "token_type": "bearer"}
