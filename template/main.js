@@ -95,3 +95,13 @@ function login(event) {
         });
 }
 
+function take_all_file_test(event){
+    event.preventDefault();
+    const audio_Files = ['Audio/test.mp3', 'audio2.mp3', 'audio3.mp3']
+    for (var i = 0; i < 3; i++) {
+        let element = document.createElement('audio');
+        element.src = audio_Files[i]
+        element.controls = true;
+        document.body.appendChild(element);
+    }
+}

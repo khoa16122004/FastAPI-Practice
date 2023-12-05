@@ -22,3 +22,8 @@ models.Base.metadata.create_all(bind=engine) # create all table
 
 app.include_router(auth.router)
 app.include_router(todo.router)
+
+# API rule
+## endpoint foramt: /{object}/{method}
+## /users/add_playlist  /users/take_all_playlists /users/delete_playlists
+## /playlists/take_all_playlists , playlists/add_playlist
